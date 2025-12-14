@@ -21,6 +21,8 @@ def chunk_text(text, max_tokens=400, overlap=60):
 
     if current:
         chunks.append(" ".join(current))
+    
+    print(f"Chunked into {len(chunks)} pieces.")
 
     return chunks
 

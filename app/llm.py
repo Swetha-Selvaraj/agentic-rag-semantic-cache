@@ -1,19 +1,16 @@
-from transformers import pipeline
 import os
-import dotenv
-dotenv.load_dotenv()
+from dotenv import load_dotenv
+from openai import OpenAI
 
-from openai import AzureOpenAI
-llm = AzureOpenAI(
-            api_key=os.environ.get("AZURE_OPENAI_API_KEY"),
-            api_version=os.environ.get("AZURE_OPENAI_API_VERSION"),
-            azure_endpoint=os.environ.get("AZURE_OPENAI_ENDPOINT"))
+load_dotenv()
+
+llm = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 
 def generate(prompt):
     response = llm.chat.completions.create(
-        model="gpt-5-chat",
+        model=os.environ.get("OPENAI_MODEL_NAME"),
         messages=[{"role": "user", "content": prompt}],
-        max_completion_tokens=300
+        max_tokens=300
     )
     result = response.choices[0].message.content
     print(result)

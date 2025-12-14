@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 import os   
 
 load_dotenv()
-QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
-QDRANT_PORT = int(os.getenv("QDRANT_PORT", 6333))
-COLLECTION = "company_policies"
+QDRANT_HOST = os.getenv("QDRANT_HOST")
+QDRANT_PORT = int(os.getenv("QDRANT_PORT"))
+COLLECTION = os.getenv("QDRANT_COLLECTION")
 
 embedder = SentenceTransformer("all-MiniLM-L6-v2")
 qdrant = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
