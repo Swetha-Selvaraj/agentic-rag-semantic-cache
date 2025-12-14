@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+redis
+qdrant-client
+sentence-transformers
+transformers
+torch
+numpy
+tavily-python
+pydantic
+pypdf
+python-dotenv
+openai
