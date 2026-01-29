@@ -7,7 +7,8 @@ An **agentic RAG system** with:
 * **Qdrant** → internal knowledge vector DB
 * **Redis Stack** → semantic cache + conversation memory
 * **FastAPI** → inference API
-* **OpenAI Embeddings** 
+* **Sentence Transformer** → for embeddings
+* **OpenAI** for generation
 * **Web search fallback** → Tavilly
 
 ---
